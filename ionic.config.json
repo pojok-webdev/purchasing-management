@@ -1,0 +1,8 @@
+{
+  "name": "management",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "94445eba"
+}
