@@ -19,7 +19,7 @@ export class HomePage {
   doShowDetails(item){
     console.log(item)
     this.nav.push(SubmissionDetailsPage,{
-      submission_id:1
+      submission_id:item.id
     })
   }
 }

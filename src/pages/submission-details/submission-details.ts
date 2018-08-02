@@ -8,10 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage({
-  name:'submission-detail',
-  segment:'detail/:id'
-})
+@IonicPage()
 @Component({
   selector: 'page-submission-details',
   templateUrl: 'submission-details.html',
@@ -19,6 +16,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class SubmissionDetailsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    let id = this.navParams.get('submission_id')
+    console.log('NavParams',id)
   }
 
   ionViewDidLoad() {
