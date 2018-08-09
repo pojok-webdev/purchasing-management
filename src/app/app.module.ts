@@ -14,6 +14,7 @@ import { SubmissionProvider } from '../providers/submission/submission';
 import { AppvarProvider } from '../providers/appvar/appvar';
 import { HttpClientModule } from '@angular/common/http';
 import { SubmissionDetailsPage } from '../pages/submission-details/submission-details';
+import { UserProvider } from '../providers/user/user';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SubmissionDetailsPage } from '../pages/submission-details/submission-de
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SubmissionProvider,
-    AppvarProvider
+    AppvarProvider,
+    UserProvider
   ]
 })
 export class AppModule {}

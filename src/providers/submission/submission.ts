@@ -11,6 +11,7 @@ import { AppvarProvider } from './../appvar/appvar'
 @Injectable()
 export class SubmissionProvider {
   obj : Observable<any>
+  objs : Observable<any[]>
   constructor(public http: HttpClient,private appvar:AppvarProvider) {
     console.log('Hello SubmissionProvider Provider');
   }
@@ -24,6 +25,17 @@ export class SubmissionProvider {
       },
       err => {
         console.log('Err',err)
+        callback(err)
+      }
+    )
+  }
+  getSubmissionDetails(submission,callback){
+    this.objs = this.http.get<any[]>(this.appvar.server+'getsubmissiondetailpage/'+submission.submission_id+'/0/10')
+    this.objs.subscribe(
+      data => {
+        callback(data)
+      },
+      err => {
         callback(err)
       }
     )

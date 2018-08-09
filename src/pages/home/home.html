@@ -7,6 +7,7 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let item of submissionDS">
+      <h1> {{item.subject}}</h1>
       {{item.submission_date}}
       <h2>{{item.purchase_target}}</h2>
       <h3>{{item.implementation_target}}</h3>

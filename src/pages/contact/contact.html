@@ -1,17 +1,22 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
+    <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+    <ion-item *ngFor="let user of users">
+      <ion-label>
+        {{user.username}}
+        <h2>{{user.email}}</h2>
+        <h3>{{user.level}}</h3>
+      </ion-label>
+      <ion-select clear>Choose
+        <ion-option>Detail</ion-option>
+        <ion-option>Change Password</ion-option>
+        <ion-option>Remove</ion-option>
+      </ion-select>
     </ion-item>
   </ion-list>
 </ion-content>

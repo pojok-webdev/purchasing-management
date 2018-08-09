@@ -14,5 +14,14 @@
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of submission_details">
+      <h1>{{item.itemname}}</h1>
 
+      <h2>{{item.brand}}</h2>
+      <h3>{{item.partnumber}}</h3>
+      <h4>{{item.description}}</h4>
+      <button ion-button clear item-end (click)="doShowDetails(item)">View</button>
+    </ion-item>
+  </ion-list>
 </ion-content>
