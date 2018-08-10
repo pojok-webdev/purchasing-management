@@ -29,4 +29,18 @@ export class UserProvider {
       }
     )
   }
+  updatePassword(obj,callback){
+    this.user = this.http.post<any>(this.appvar.server+'updatepassword',obj)
+    this.user.subscribe(
+      data => {
+        console.log("updatePassword",data)
+        callback(data)
+      },
+      err => {
+        console.log("updatePassword err",err)
+        callback(err)
+      },
+      () => {}
+    )
+  }
 }

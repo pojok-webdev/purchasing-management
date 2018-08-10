@@ -12,10 +12,11 @@
         <h2>{{user.email}}</h2>
         <h3>{{user.level}}</h3>
       </ion-label>
-      <ion-select clear interface="popover" (ionChange)="showActionModal($event)">Choose
+      <ion-select clear interface="popover" (ionChange)="showActionModal($event,user.email)">Choose
         <ion-option value="detail">Detail</ion-option>
         <ion-option value="changePassword">Change Password</ion-option>
-        <ion-option value="remove">Remove</ion-option>
+        <ion-option value="changeLevel">Change Level</ion-option>
+        <ion-option value="remove">Set Non Active</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>

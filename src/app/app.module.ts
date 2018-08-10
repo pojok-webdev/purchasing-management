@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SubmissionDetailsPage } from '../pages/submission-details/submission-details';
 import { UserChangepasswordPage } from '../pages/user-changepassword/user-changepassword';
 import { UserProvider } from '../providers/user/user';
+import { UserChangeLevelPage } from '../pages/user-change-level/user-change-level';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UserProvider } from '../providers/user/user';
     HomePage,
     TabsPage,
     SubmissionDetailsPage,
-    UserChangepasswordPage
+    UserChangepasswordPage,
+    UserChangeLevelPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { UserProvider } from '../providers/user/user';
     HomePage,
     TabsPage,
     SubmissionDetailsPage,
-    UserChangepasswordPage
+    UserChangepasswordPage,
+    UserChangeLevelPage
   ],
   providers: [
     StatusBar,

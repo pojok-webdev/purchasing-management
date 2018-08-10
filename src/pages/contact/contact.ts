@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { UserProvider } from '../../providers/user/user';
 import { UserChangepasswordPage } from '../user-changepassword/user-changepassword';
+import { UserChangeLevelPage } from '../user-change-level/user-change-level';
 
 @Component({
   selector: 'page-contact',
@@ -22,14 +23,18 @@ export class ContactPage {
       this.users = result
     })
   }
-  showActionModal(event){
+  showActionModal(event,email){
     console.log("ShowChangePasswordModal invoked",event)
     switch(event){
       case 'changePassword':
-      let modal = this.modalCtrl.create(UserChangepasswordPage,{})
-      modal.present()
+        let changePasswordModal = this.modalCtrl.create(UserChangepasswordPage,{email:email})
+        changePasswordModal.present()
       break;
       case 'detail':
+      break;
+      case 'changeLevel':
+        let changeLevelModal = this.modalCtrl.create(UserChangeLevelPage,{email:email})
+        changeLevelModal.present() 
       break;
       case 'remove':
       break;
