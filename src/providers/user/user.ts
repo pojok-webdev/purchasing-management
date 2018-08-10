@@ -29,6 +29,17 @@ export class UserProvider {
       }
     )
   }
+  getUser(obj,callback){
+    this.user = this.http.post<any>(this.appvar.server+'getuser',obj)
+    this.user.subscribe(
+      data => {
+        callback(data)
+      },
+      err => {
+        callback(err)
+      }
+    )
+  }
   updatePassword(obj,callback){
     this.user = this.http.post<any>(this.appvar.server+'updatepassword',obj)
     this.user.subscribe(
@@ -41,6 +52,19 @@ export class UserProvider {
         callback(err)
       },
       () => {}
+    )
+  }
+  updateUser(obj,callback){
+    this.user = this.http.post<any>(this.appvar.server+'updateuser',obj)
+    this.user.subscribe(
+      data => {
+        console.log("changeLevel",data)
+        callback(data)
+      },
+      err => {
+        console.log("changeLevel error",err)
+        callback(err)
+      }
     )
   }
 }

@@ -23,17 +23,17 @@ export class ContactPage {
       this.users = result
     })
   }
-  showActionModal(event,email){
+  showActionModal(event,_user){
     console.log("ShowChangePasswordModal invoked",event)
     switch(event){
       case 'changePassword':
-        let changePasswordModal = this.modalCtrl.create(UserChangepasswordPage,{email:email})
+        let changePasswordModal = this.modalCtrl.create(UserChangepasswordPage,{email:_user.email})
         changePasswordModal.present()
       break;
       case 'detail':
       break;
       case 'changeLevel':
-        let changeLevelModal = this.modalCtrl.create(UserChangeLevelPage,{email:email})
+        let changeLevelModal = this.modalCtrl.create(UserChangeLevelPage,{id:_user.id})
         changeLevelModal.present() 
       break;
       case 'remove':
