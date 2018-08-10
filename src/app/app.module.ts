@@ -14,6 +14,7 @@ import { SubmissionProvider } from '../providers/submission/submission';
 import { AppvarProvider } from '../providers/appvar/appvar';
 import { HttpClientModule } from '@angular/common/http';
 import { SubmissionDetailsPage } from '../pages/submission-details/submission-details';
+import { UserChangepasswordPage } from '../pages/user-changepassword/user-changepassword';
 import { UserProvider } from '../providers/user/user';
 
 @NgModule({
@@ -23,12 +24,13 @@ import { UserProvider } from '../providers/user/user';
     ContactPage,
     HomePage,
     TabsPage,
-    SubmissionDetailsPage
+    SubmissionDetailsPage,
+    UserChangepasswordPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +39,8 @@ import { UserProvider } from '../providers/user/user';
     ContactPage,
     HomePage,
     TabsPage,
-    SubmissionDetailsPage
+    SubmissionDetailsPage,
+    UserChangepasswordPage
   ],
   providers: [
     StatusBar,
