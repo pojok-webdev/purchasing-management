@@ -16,7 +16,11 @@ import { SubmissionProvider } from '../../providers/submission/submission';
 })
 export class SubmissionDetailsPage {
   submission_details
-  constructor(public navCtrl: NavController, public navParams: NavParams,private submission: SubmissionProvider) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private submission: SubmissionProvider
+  ) {
     let id = this.navParams.get('submission_id')
     console.log('NavParams',id)
     this.submission.getSubmissionDetails({submission_id:id},result => {
@@ -28,5 +32,24 @@ export class SubmissionDetailsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SubmissionDetailsPage');
   }
-
+  doAct(event,obj){
+    console.log('Event name',event)
+    switch(event){
+      case 'pending':
+      this.submission.setStatus({id:obj.id,status:'1'},result => {
+        console.log('rejected',result)
+      })    
+      break
+      case 'approve':
+        this.submission.setStatus({id:obj.id,status:'2'},result => {
+          console.log('approved',result)
+        })
+      break
+      case 'reject':
+        this.submission.setStatus({id:obj.id,status:'3'},result => {
+          console.log('rejected',result)
+        })
+      break
+    }
+  }
 }

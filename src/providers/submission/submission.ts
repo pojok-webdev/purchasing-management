@@ -40,4 +40,15 @@ export class SubmissionProvider {
       }
     )
   }
+  setStatus(obj,callback){
+    this.obj = this.http.get(this.appvar.server+'setsubmissiondetailstatus/'+obj.id+'/'+obj.status)
+    this.obj.subscribe(
+      data => {
+        callback(data)
+      },
+      err => {
+        callback(err)
+      }
+    )
+  }
 }

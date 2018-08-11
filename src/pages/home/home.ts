@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, IonicPage } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { SubmissionProvider } from '../../providers/submission/submission';
 import { SubmissionDetailsPage } from '../../pages/submission-details/submission-details';
 

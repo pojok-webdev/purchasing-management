@@ -16,12 +16,17 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let item of submission_details">
-      <h1>{{item.itemname}}</h1>
-
-      <h2>{{item.brand}}</h2>
-      <h3>{{item.partnumber}}</h3>
-      <h4>{{item.description}}</h4>
-      <button ion-button clear item-end (click)="doShowDetails(item)">View</button>
+      <ion-label>
+          <h1>{{item.subject}}</h1>
+          <h2>{{item.brand}}</h2>
+          <h3>{{item.staff_name}}</h3>
+          <h4>{{item.description}}</h4>
+          </ion-label>
+      <ion-select (ionChange)="doAct($event,item)" interface="popover">
+        <ion-option value="pending">Pending</ion-option>
+        <ion-option value="approve">Approve</ion-option>
+        <ion-option value="reject">Reject</ion-option>
+      </ion-select>
     </ion-item>
   </ion-list>
 </ion-content>
