@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class AppvarProvider {
-  server:String='http://localhost:2018/'
+  server:String='http://delima.padinet.com:2018/'
 
   constructor(public http: HttpClient) {
     console.log('Hello AppvarProvider Provider');

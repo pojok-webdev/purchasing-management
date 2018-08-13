@@ -33,6 +33,7 @@ export class ContactPage {
       case 'detail':
       break;
       case 'changeLevel':
+        console.log('change level invoked')
         let changeLevelModal = this.modalCtrl.create(UserChangeLevelPage,{id:_user.id})
         changeLevelModal.present() 
       break;
